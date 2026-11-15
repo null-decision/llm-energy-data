@@ -1,0 +1,116 @@
+{
+  "$schema": "../../../schema/model.schema.json",
+  "id": "openai/gpt-4o-mini",
+  "name": "GPT-4o mini",
+  "developer": "openai",
+  "open_weights": false,
+  "ecologits": {
+    "provider": "openai",
+    "name": "gpt-4o-mini",
+    "version": "0.11.3"
+  },
+  "architecture": {
+    "type": {
+      "value": "dense",
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    },
+    "total_params_b": {
+      "min": 8,
+      "max": 28,
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    },
+    "active_params_b": {
+      "min": 8,
+      "max": 28,
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    }
+  },
+  "speeds": [],
+  "tokens_per_task": [],
+  "prices": [
+    {
+      "provider": "openai",
+      "api_model": "gpt-4o-mini",
+      "currency": "USD",
+      "input_per_mtok": 0.15,
+      "cached_input_per_mtok": 0.075,
+      "output_per_mtok": 0.6,
+      "source": "openai-pricing",
+      "url": "https://developers.openai.com/api/docs/pricing",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "quality": [
+    {
+      "leaderboard": "lmarena",
+      "arena": "text",
+      "entry": "GPT-4o mini (2024-07-18)",
+      "match": "exact",
+      "reasoning": "none",
+      "style_control": true,
+      "snapshot_date": "2026-11-11",
+      "ratings": {
+        "overall": {
+          "rating": 1317.6,
+          "rating_lower": 1314.1,
+          "rating_upper": 1321.2,
+          "votes": 68705
+        },
+        "coding": {
+          "rating": 1347.6,
+          "rating_lower": 1341.1,
+          "rating_upper": 1354.2,
+          "votes": 10928
+        },
+        "math": {
+          "rating": 1274.9,
+          "rating_lower": 1267.8,
+          "rating_upper": 1282,
+          "votes": 9322
+        },
+        "creative_writing": {
+          "rating": 1293.8,
+          "rating_lower": 1286.8,
+          "rating_upper": 1300.8,
+          "votes": 10486
+        },
+        "hard_prompts": {
+          "rating": 1310.9,
+          "rating_lower": 1305.5,
+          "rating_upper": 1316.2,
+          "votes": 18259
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "leaderboard": "lmarena",
+      "arena": "vision",
+      "entry": "GPT-4o mini (2024-07-18)",
+      "match": "exact",
+      "reasoning": "none",
+      "style_control": true,
+      "snapshot_date": "2026-11-09",
+      "ratings": {
+        "overall": {
+          "rating": 1097,
+          "rating_lower": 1088.7,
+          "rating_upper": 1105.4,
+          "votes": 17341
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "notes": [
+    "OpenAI shuts down gpt-4o-mini (gpt-4o-mini-2024-07-18) on 2027-01-14 (deprecations page, checked 2026-11-15)."
+  ]
+}

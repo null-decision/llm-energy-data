@@ -1,0 +1,140 @@
+{
+  "$schema": "../../../schema/model.schema.json",
+  "id": "zai/glm-5.3-flash",
+  "name": "GLM-5.3-Flash",
+  "developer": "zai",
+  "open_weights": true,
+  "architecture": {
+    "type": {
+      "value": "moe",
+      "source": "model-card",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "checked_at": "2026-11-15"
+    },
+    "total_params_b": {
+      "value": 320,
+      "source": "model-card",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "checked_at": "2026-11-15"
+    },
+    "active_params_b": {
+      "value": 18,
+      "source": "model-card",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash",
+      "checked_at": "2026-11-15"
+    },
+    "weights_gb": {
+      "value": 328.3,
+      "hf_repo": "zai-org/GLM-5.3-Flash",
+      "hf_revision": "46a050bec13002ad29ee795c16e61cf4fa3c4a9c",
+      "files": 62,
+      "precision": "FP8 (F8_E4M3) with some BF16 tensors, from the safetensors metadata",
+      "source": "huggingface-hub",
+      "url": "https://huggingface.co/zai-org/GLM-5.3-Flash/tree/46a050bec13002ad29ee795c16e61cf4fa3c4a9c",
+      "checked_at": "2026-11-15"
+    }
+  },
+  "speeds": [],
+  "tokens_per_task": [],
+  "prices": [
+    {
+      "provider": "zai",
+      "api_model": "glm-5.3-flash",
+      "currency": "USD",
+      "input_per_mtok": 0.15,
+      "cached_input_per_mtok": 0.03,
+      "output_per_mtok": 0.5,
+      "source": "zai-pricing",
+      "url": "https://docs.z.ai/guides/overview/pricing",
+      "checked_at": "2026-11-15",
+      "note": "The page names the model GLM-5.3-Flash."
+    },
+    {
+      "provider": "mistral",
+      "api_model": "zai-glm-5-3-flash",
+      "currency": "USD",
+      "input_per_mtok": 0.15,
+      "cached_input_per_mtok": 0.03,
+      "output_per_mtok": 0.5,
+      "regional_surcharges": [
+        {
+          "region": "eu",
+          "multiplier": 1.1,
+          "url": "https://docs.mistral.ai/inference/regional-inference"
+        },
+        {
+          "region": "us",
+          "multiplier": 1.1,
+          "url": "https://docs.mistral.ai/inference/regional-inference"
+        }
+      ],
+      "source": "mistral-pricing",
+      "url": "https://docs.mistral.ai/models/zai-glm-5-3-flash",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "quality": [
+    {
+      "leaderboard": "lmarena",
+      "arena": "text",
+      "entry": "GLM-5.3-Flash",
+      "match": "exact",
+      "reasoning": "not_stated",
+      "style_control": true,
+      "snapshot_date": "2026-11-11",
+      "ratings": {
+        "overall": {
+          "rating": 1475.3,
+          "rating_lower": 1470.8,
+          "rating_upper": 1479.7,
+          "votes": 51019
+        },
+        "coding": {
+          "rating": 1526.3,
+          "rating_lower": 1519.8,
+          "rating_upper": 1532.9,
+          "votes": 12885
+        },
+        "math": {
+          "rating": 1504.8,
+          "rating_lower": 1492.3,
+          "rating_upper": 1517.2,
+          "votes": 2537
+        },
+        "creative_writing": {
+          "rating": 1434.8,
+          "rating_lower": 1427.8,
+          "rating_upper": 1441.9,
+          "votes": 10973
+        },
+        "hard_prompts": {
+          "rating": 1500.4,
+          "rating_lower": 1495.2,
+          "rating_upper": 1505.5,
+          "votes": 32572
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "leaderboard": "lmarena",
+      "arena": "vision",
+      "entry": "GLM-5.3-Flash",
+      "match": "exact",
+      "reasoning": "not_stated",
+      "style_control": true,
+      "snapshot_date": "2026-11-09",
+      "ratings": {
+        "overall": {
+          "rating": 1271.9,
+          "rating_lower": 1266.3,
+          "rating_upper": 1277.4,
+          "votes": 31530
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    }
+  ]
+}

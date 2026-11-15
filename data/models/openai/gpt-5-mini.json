@@ -1,0 +1,116 @@
+{
+  "$schema": "../../../schema/model.schema.json",
+  "id": "openai/gpt-5-mini",
+  "name": "GPT-5 mini",
+  "developer": "openai",
+  "open_weights": false,
+  "ecologits": {
+    "provider": "openai",
+    "name": "gpt-5-mini",
+    "version": "0.11.3"
+  },
+  "architecture": {
+    "type": {
+      "value": "dense",
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    },
+    "total_params_b": {
+      "min": 25,
+      "max": 70,
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    },
+    "active_params_b": {
+      "min": 25,
+      "max": 70,
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    }
+  },
+  "speeds": [],
+  "tokens_per_task": [],
+  "prices": [
+    {
+      "provider": "openai",
+      "api_model": "gpt-5-mini",
+      "currency": "USD",
+      "input_per_mtok": 0.25,
+      "cached_input_per_mtok": 0.025,
+      "output_per_mtok": 2,
+      "source": "openai-pricing",
+      "url": "https://developers.openai.com/api/docs/pricing",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "quality": [
+    {
+      "leaderboard": "lmarena",
+      "arena": "text",
+      "entry": "GPT-5 mini (High)",
+      "match": "exact",
+      "reasoning": "high",
+      "style_control": true,
+      "snapshot_date": "2026-11-11",
+      "ratings": {
+        "overall": {
+          "rating": 1389.9,
+          "rating_lower": 1385.2,
+          "rating_upper": 1394.5,
+          "votes": 26709
+        },
+        "coding": {
+          "rating": 1432.1,
+          "rating_lower": 1423.7,
+          "rating_upper": 1440.6,
+          "votes": 5495
+        },
+        "math": {
+          "rating": 1407.3,
+          "rating_lower": 1391.8,
+          "rating_upper": 1422.8,
+          "votes": 1445
+        },
+        "creative_writing": {
+          "rating": 1322.9,
+          "rating_lower": 1312.5,
+          "rating_upper": 1333.4,
+          "votes": 3513
+        },
+        "hard_prompts": {
+          "rating": 1404.1,
+          "rating_lower": 1398,
+          "rating_upper": 1410.2,
+          "votes": 12813
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "leaderboard": "lmarena",
+      "arena": "vision",
+      "entry": "GPT-5 mini (High)",
+      "match": "exact",
+      "reasoning": "high",
+      "style_control": true,
+      "snapshot_date": "2026-11-09",
+      "ratings": {
+        "overall": {
+          "rating": 1185.1,
+          "rating_lower": 1177,
+          "rating_upper": 1193.2,
+          "votes": 28904
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "notes": [
+    "OpenAI shuts down gpt-5-mini on 2026-12-11 (deprecations page, checked 2026-11-15)."
+  ]
+}

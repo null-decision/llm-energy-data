@@ -1,0 +1,155 @@
+{
+  "$schema": "../../../schema/model.schema.json",
+  "id": "mistral/mistral-medium-3.5",
+  "name": "Mistral Medium 3.5",
+  "developer": "mistral",
+  "open_weights": true,
+  "ecologits": {
+    "provider": "mistralai",
+    "name": "mistral-medium-3-5",
+    "version": "0.11.3"
+  },
+  "architecture": {
+    "type": {
+      "value": "dense",
+      "source": "model-card",
+      "url": "https://huggingface.co/mistralai/Mistral-Medium-3.5-128B",
+      "checked_at": "2026-11-15"
+    },
+    "total_params_b": {
+      "value": 128,
+      "source": "model-card",
+      "url": "https://huggingface.co/mistralai/Mistral-Medium-3.5-128B",
+      "checked_at": "2026-11-15"
+    },
+    "active_params_b": {
+      "value": 128,
+      "source": "model-card",
+      "url": "https://huggingface.co/mistralai/Mistral-Medium-3.5-128B",
+      "checked_at": "2026-11-15"
+    },
+    "weights_gb": {
+      "value": 133.6,
+      "hf_repo": "mistralai/Mistral-Medium-3.5-128B",
+      "hf_revision": "22b2b868a15677cfa6061277ed2f653d1349a9ab",
+      "files": 3,
+      "precision": "FP8 (F8_E4M3) with some BF16 tensors, from the safetensors metadata",
+      "source": "huggingface-hub",
+      "url": "https://huggingface.co/mistralai/Mistral-Medium-3.5-128B/tree/22b2b868a15677cfa6061277ed2f653d1349a9ab",
+      "checked_at": "2026-11-15"
+    }
+  },
+  "speeds": [
+    {
+      "provider": "mistral",
+      "api_model": "mistral-medium-2604",
+      "region": "eu",
+      "tokens_per_second": 144.1,
+      "time_to_first_token_s": 0.3,
+      "statistic": "median",
+      "answers": 10,
+      "min_output_tokens": 100,
+      "period": {
+        "from": "2026-11-10",
+        "to": "2026-11-10"
+      },
+      "reasoning": "none",
+      "source": "null-decision-timed-runs",
+      "checked_at": "2026-11-10"
+    }
+  ],
+  "tokens_per_task": [],
+  "prices": [
+    {
+      "provider": "mistral",
+      "api_model": "mistral-medium-3-5",
+      "currency": "USD",
+      "input_per_mtok": 1.5,
+      "output_per_mtok": 7.5,
+      "regional_surcharges": [
+        {
+          "region": "eu",
+          "multiplier": 1.1,
+          "url": "https://docs.mistral.ai/inference/regional-inference"
+        },
+        {
+          "region": "us",
+          "multiplier": 1.1,
+          "url": "https://docs.mistral.ai/inference/regional-inference"
+        }
+      ],
+      "source": "mistral-pricing",
+      "url": "https://docs.mistral.ai/models/mistral-medium-3-5-26-04",
+      "checked_at": "2026-11-15",
+      "note": "From the model page: the price list no longer shows deprecated models."
+    }
+  ],
+  "quality": [
+    {
+      "leaderboard": "lmarena",
+      "arena": "text",
+      "entry": "Mistral Medium 3.5",
+      "match": "exact",
+      "reasoning": "not_stated",
+      "style_control": true,
+      "snapshot_date": "2026-11-11",
+      "ratings": {
+        "overall": {
+          "rating": 1426.4,
+          "rating_lower": 1419.9,
+          "rating_upper": 1432.8,
+          "votes": 11647
+        },
+        "coding": {
+          "rating": 1478.1,
+          "rating_lower": 1467.2,
+          "rating_upper": 1489,
+          "votes": 3249
+        },
+        "math": {
+          "rating": 1425.7,
+          "rating_lower": 1401.6,
+          "rating_upper": 1449.9,
+          "votes": 561
+        },
+        "creative_writing": {
+          "rating": 1399.4,
+          "rating_lower": 1385.6,
+          "rating_upper": 1413.2,
+          "votes": 2052
+        },
+        "hard_prompts": {
+          "rating": 1445,
+          "rating_lower": 1437.3,
+          "rating_upper": 1452.7,
+          "votes": 7565
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "leaderboard": "lmarena",
+      "arena": "vision",
+      "entry": "Mistral Medium 3.5",
+      "match": "exact",
+      "reasoning": "not_stated",
+      "style_control": true,
+      "snapshot_date": "2026-11-09",
+      "ratings": {
+        "overall": {
+          "rating": 1199.2,
+          "rating_lower": 1189.6,
+          "rating_upper": 1208.8,
+          "votes": 5330
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "notes": [
+    "Mistral deprecated this model on 2026-10-31 and retires it on 2027-04-30 (model page, checked 2026-11-15).",
+    "Mistral's pages name it mistral-medium-3-5. The API also accepts mistral-medium-2604, the name EcoLogits lists and the timed run used."
+  ]
+}

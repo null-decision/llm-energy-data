@@ -1,0 +1,74 @@
+{
+  "$schema": "../../../schema/model.schema.json",
+  "id": "mistral/mistral-small-4",
+  "name": "Mistral Small 4",
+  "developer": "mistral",
+  "open_weights": true,
+  "ecologits": {
+    "provider": "mistralai",
+    "name": "mistral-small-2603",
+    "version": "0.11.3"
+  },
+  "architecture": {
+    "type": {
+      "value": "moe",
+      "source": "model-card",
+      "url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603",
+      "checked_at": "2026-11-15",
+      "note": "128 experts, 4 active."
+    },
+    "total_params_b": {
+      "value": 119,
+      "source": "model-card",
+      "url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603",
+      "checked_at": "2026-11-15"
+    },
+    "active_params_b": {
+      "value": 6.5,
+      "source": "model-card",
+      "url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603",
+      "checked_at": "2026-11-15",
+      "note": "EcoLogits 0.11.3 uses 8."
+    },
+    "weights_gb": {
+      "value": 120.9,
+      "hf_repo": "mistralai/Mistral-Small-4-119B-2603",
+      "hf_revision": "a11f36bebf709121056b1dbcc943d1c6afbe494d",
+      "files": 3,
+      "precision": "FP8 (F8_E4M3) with some BF16 tensors, from the safetensors metadata",
+      "source": "huggingface-hub",
+      "url": "https://huggingface.co/mistralai/Mistral-Small-4-119B-2603/tree/a11f36bebf709121056b1dbcc943d1c6afbe494d",
+      "checked_at": "2026-11-15"
+    }
+  },
+  "speeds": [],
+  "tokens_per_task": [],
+  "prices": [
+    {
+      "provider": "mistral",
+      "api_model": "mistral-small-2603",
+      "currency": "USD",
+      "input_per_mtok": 0.15,
+      "output_per_mtok": 0.6,
+      "regional_surcharges": [
+        {
+          "region": "eu",
+          "multiplier": 1.1,
+          "url": "https://docs.mistral.ai/inference/regional-inference"
+        },
+        {
+          "region": "us",
+          "multiplier": 1.1,
+          "url": "https://docs.mistral.ai/inference/regional-inference"
+        }
+      ],
+      "source": "mistral-pricing",
+      "url": "https://docs.mistral.ai/inference/pricing",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "quality": [],
+  "notes": [
+    "Not rated on the LMArena text or vision leaderboard (snapshot 2026-11-11)."
+  ]
+}

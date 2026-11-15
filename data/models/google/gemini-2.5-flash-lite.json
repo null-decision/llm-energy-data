@@ -1,0 +1,176 @@
+{
+  "$schema": "../../../schema/model.schema.json",
+  "id": "google/gemini-2.5-flash-lite",
+  "name": "Gemini 2.5 Flash-Lite",
+  "developer": "google",
+  "open_weights": false,
+  "ecologits": {
+    "provider": "google_genai",
+    "name": "gemini-2.5-flash-lite",
+    "version": "0.11.3"
+  },
+  "architecture": {
+    "type": {
+      "value": "dense",
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    },
+    "total_params_b": {
+      "min": 8,
+      "max": 28,
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    },
+    "active_params_b": {
+      "min": 8,
+      "max": 28,
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    }
+  },
+  "speeds": [],
+  "tokens_per_task": [],
+  "prices": [
+    {
+      "provider": "google",
+      "api_model": "gemini-2.5-flash-lite",
+      "applies_to": "text, image and video input",
+      "currency": "USD",
+      "input_per_mtok": 0.1,
+      "cached_input_per_mtok": 0.01,
+      "output_per_mtok": 0.4,
+      "source": "google-gemini-pricing",
+      "url": "https://aistudio.google.com/docs/pricing",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "quality": [
+    {
+      "leaderboard": "lmarena",
+      "arena": "text",
+      "entry": "Gemini 2.5 Flash-Lite Preview (Non-Thinking, 09-2025)",
+      "match": "other_checkpoint",
+      "reasoning": "none",
+      "style_control": true,
+      "snapshot_date": "2026-11-11",
+      "ratings": {
+        "overall": {
+          "rating": 1379.4,
+          "rating_lower": 1376,
+          "rating_upper": 1382.8,
+          "votes": 47195
+        },
+        "coding": {
+          "rating": 1397.3,
+          "rating_lower": 1390.9,
+          "rating_upper": 1403.7,
+          "votes": 9810
+        },
+        "math": {
+          "rating": 1360.9,
+          "rating_lower": 1350.2,
+          "rating_upper": 1371.7,
+          "votes": 2919
+        },
+        "creative_writing": {
+          "rating": 1360.3,
+          "rating_lower": 1352.7,
+          "rating_upper": 1368,
+          "votes": 6569
+        },
+        "hard_prompts": {
+          "rating": 1390.3,
+          "rating_lower": 1385.9,
+          "rating_upper": 1394.7,
+          "votes": 25405
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "leaderboard": "lmarena",
+      "arena": "text",
+      "entry": "Gemini 2.5 Flash-Lite Preview (Thinking, 06-17)",
+      "match": "other_checkpoint",
+      "reasoning": "on",
+      "style_control": true,
+      "snapshot_date": "2026-11-11",
+      "ratings": {
+        "overall": {
+          "rating": 1374.9,
+          "rating_lower": 1370.4,
+          "rating_upper": 1379.4,
+          "votes": 32333
+        },
+        "coding": {
+          "rating": 1382.5,
+          "rating_lower": 1374.5,
+          "rating_upper": 1390.5,
+          "votes": 5969
+        },
+        "math": {
+          "rating": 1363.3,
+          "rating_lower": 1350.8,
+          "rating_upper": 1375.8,
+          "votes": 2072
+        },
+        "creative_writing": {
+          "rating": 1372.6,
+          "rating_lower": 1363.2,
+          "rating_upper": 1382,
+          "votes": 4139
+        },
+        "hard_prompts": {
+          "rating": 1382.5,
+          "rating_lower": 1376.6,
+          "rating_upper": 1388.3,
+          "votes": 14473
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "leaderboard": "lmarena",
+      "arena": "vision",
+      "entry": "Gemini 2.5 Flash-Lite Preview (Non-Thinking, 09-2025)",
+      "match": "other_checkpoint",
+      "reasoning": "none",
+      "style_control": true,
+      "snapshot_date": "2026-11-09",
+      "ratings": {
+        "overall": {
+          "rating": 1174.2,
+          "rating_lower": 1164.6,
+          "rating_upper": 1183.8,
+          "votes": 4849
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "leaderboard": "lmarena",
+      "arena": "vision",
+      "entry": "Gemini 2.5 Flash-Lite Preview (Thinking, 06-17)",
+      "match": "other_checkpoint",
+      "reasoning": "on",
+      "style_control": true,
+      "snapshot_date": "2026-11-09",
+      "ratings": {
+        "overall": {
+          "rating": 1188.7,
+          "rating_lower": 1181.3,
+          "rating_upper": 1196.2,
+          "votes": 35868
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    }
+  ]
+}

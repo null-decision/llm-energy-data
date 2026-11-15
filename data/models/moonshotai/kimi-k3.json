@@ -1,0 +1,101 @@
+{
+  "$schema": "../../../schema/model.schema.json",
+  "id": "moonshotai/kimi-k3",
+  "name": "Kimi K3",
+  "developer": "moonshotai",
+  "open_weights": true,
+  "architecture": {
+    "type": {
+      "value": "moe",
+      "source": "model-card",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "checked_at": "2026-11-15"
+    },
+    "total_params_b": {
+      "value": 2800,
+      "source": "model-card",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "checked_at": "2026-11-15"
+    },
+    "active_params_b": {
+      "value": 104,
+      "source": "model-card",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3",
+      "checked_at": "2026-11-15"
+    },
+    "weights_gb": {
+      "value": 1560.9,
+      "hf_repo": "moonshotai/Kimi-K3",
+      "hf_revision": "f831ab66814297da540d832a5235f8e904f29d06",
+      "files": 96,
+      "precision": "MXFP4 weights, from quantization-aware training (model card)",
+      "source": "huggingface-hub",
+      "url": "https://huggingface.co/moonshotai/Kimi-K3/tree/f831ab66814297da540d832a5235f8e904f29d06",
+      "checked_at": "2026-11-15"
+    }
+  },
+  "speeds": [],
+  "tokens_per_task": [],
+  "prices": [
+    {
+      "provider": "moonshotai",
+      "api_model": "kimi-k3",
+      "currency": "USD",
+      "input_per_mtok": 3,
+      "cached_input_per_mtok": 0.3,
+      "output_per_mtok": 15,
+      "source": "moonshot-pricing",
+      "url": "https://platform.kimi.ai/docs/pricing/chat",
+      "checked_at": "2026-11-15",
+      "note": "Cache writes are billed separately: $3.00 per million tokens for a 5-minute cache, $6.00 for 1 hour."
+    }
+  ],
+  "quality": [
+    {
+      "leaderboard": "lmarena",
+      "arena": "text",
+      "entry": "Kimi K3 (Max)",
+      "match": "exact",
+      "reasoning": "max",
+      "style_control": true,
+      "snapshot_date": "2026-11-11",
+      "ratings": {
+        "overall": {
+          "rating": 1487.4,
+          "rating_lower": 1483.2,
+          "rating_upper": 1491.7,
+          "votes": 41402
+        },
+        "coding": {
+          "rating": 1538.1,
+          "rating_lower": 1531.4,
+          "rating_upper": 1544.9,
+          "votes": 10247
+        },
+        "math": {
+          "rating": 1501.9,
+          "rating_lower": 1488,
+          "rating_upper": 1515.9,
+          "votes": 1877
+        },
+        "creative_writing": {
+          "rating": 1459.1,
+          "rating_lower": 1451.6,
+          "rating_upper": 1466.6,
+          "votes": 8540
+        },
+        "hard_prompts": {
+          "rating": 1515.7,
+          "rating_lower": 1510.8,
+          "rating_upper": 1520.6,
+          "votes": 26409
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "notes": [
+    "Kimi K3 always reasons. A timed run asking for no reasoning got the default level, max, and spent its whole output cap of 1,500 tokens reasoning, so v0 has no speed for it."
+  ]
+}

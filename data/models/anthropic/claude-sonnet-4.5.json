@@ -1,0 +1,139 @@
+{
+  "$schema": "../../../schema/model.schema.json",
+  "id": "anthropic/claude-sonnet-4.5",
+  "name": "Claude Sonnet 4.5",
+  "developer": "anthropic",
+  "open_weights": false,
+  "ecologits": {
+    "provider": "anthropic",
+    "name": "claude-sonnet-4-5-20250929",
+    "version": "0.11.3"
+  },
+  "architecture": {
+    "type": {
+      "value": "moe",
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    },
+    "total_params_b": {
+      "value": 440,
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    },
+    "active_params_b": {
+      "min": 44,
+      "max": 132,
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    }
+  },
+  "speeds": [],
+  "tokens_per_task": [],
+  "prices": [
+    {
+      "provider": "anthropic",
+      "api_model": "claude-sonnet-4-5-20250929",
+      "currency": "USD",
+      "input_per_mtok": 3,
+      "cached_input_per_mtok": 0.3,
+      "output_per_mtok": 15,
+      "source": "anthropic-pricing",
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "quality": [
+    {
+      "leaderboard": "lmarena",
+      "arena": "text",
+      "entry": "Claude Sonnet 4.5 (20250929)",
+      "match": "exact",
+      "reasoning": "not_stated",
+      "style_control": true,
+      "snapshot_date": "2026-11-11",
+      "ratings": {
+        "overall": {
+          "rating": 1455.1,
+          "rating_lower": 1452.2,
+          "rating_upper": 1458,
+          "votes": 82053
+        },
+        "coding": {
+          "rating": 1512.3,
+          "rating_lower": 1507.2,
+          "rating_upper": 1517.3,
+          "votes": 19600
+        },
+        "math": {
+          "rating": 1426.8,
+          "rating_lower": 1418.4,
+          "rating_upper": 1435.1,
+          "votes": 5067
+        },
+        "creative_writing": {
+          "rating": 1454.6,
+          "rating_lower": 1448.5,
+          "rating_upper": 1460.6,
+          "votes": 12291
+        },
+        "hard_prompts": {
+          "rating": 1483,
+          "rating_lower": 1479.4,
+          "rating_upper": 1486.6,
+          "votes": 47919
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "leaderboard": "lmarena",
+      "arena": "text",
+      "entry": "Claude Sonnet 4.5 (High, 32K, 20250929)",
+      "match": "exact",
+      "reasoning": "high",
+      "style_control": true,
+      "snapshot_date": "2026-11-11",
+      "ratings": {
+        "overall": {
+          "rating": 1456.1,
+          "rating_lower": 1453.4,
+          "rating_upper": 1458.9,
+          "votes": 83310
+        },
+        "coding": {
+          "rating": 1518.7,
+          "rating_lower": 1513.9,
+          "rating_upper": 1523.6,
+          "votes": 19781
+        },
+        "math": {
+          "rating": 1455.1,
+          "rating_lower": 1446.6,
+          "rating_upper": 1463.5,
+          "votes": 5013
+        },
+        "creative_writing": {
+          "rating": 1449.4,
+          "rating_lower": 1443.6,
+          "rating_upper": 1455.3,
+          "votes": 12558
+        },
+        "hard_prompts": {
+          "rating": 1486.8,
+          "rating_lower": 1483.3,
+          "rating_upper": 1490.3,
+          "votes": 48089
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "notes": [
+    "Anthropic retires claude-sonnet-4-5-20250929 from the Claude API on 2026-11-30 (model deprecations page, checked 2026-11-15)."
+  ]
+}
