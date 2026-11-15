@@ -1,0 +1,123 @@
+{
+  "$schema": "../schema/sources.schema.json",
+  "sources": [
+    {
+      "id": "ecologits-0.11.3",
+      "title": "EcoLogits models.json, release 0.11.3",
+      "publisher": "EcoLogits",
+      "kind": "dataset",
+      "url": "https://github.com/mlco2/ecologits/blob/d0b76e382442e63df688e9c37016f596223c8aff/ecologits/data/models.json",
+      "revision": "d0b76e382442e63df688e9c37016f596223c8aff",
+      "licence": "MPL-2.0",
+      "attribution": "EcoLogits (https://ecologits.ai), ecologits/data/models.json, release 0.11.3, MPL-2.0.",
+      "note": "Model type and parameter counts. For closed models these are EcoLogits' estimates (its 'model-arch-not-released' warning) and are marked estimated here. EcoLogits' speeds come from OpenRouter; we don't copy them."
+    },
+    {
+      "id": "model-card",
+      "title": "The developer's model card",
+      "publisher": "The model's developer",
+      "kind": "provider_page",
+      "url": "https://huggingface.co/docs/hub/model-cards",
+      "licence": "facts",
+      "note": "Each value links to the exact card in its url."
+    },
+    {
+      "id": "huggingface-hub",
+      "title": "Hugging Face Hub file listing",
+      "publisher": "Hugging Face",
+      "kind": "file_listing",
+      "url": "https://huggingface.co/docs/hub/api",
+      "licence": "facts",
+      "note": "File sizes from https://huggingface.co/api/models/<repo>?blobs=true. Top-level .safetensors files, one copy: where a repository also ships consolidated*.safetensors next to the model-* shards, only the shards count."
+    },
+    {
+      "id": "lmarena-leaderboard",
+      "title": "LMArena leaderboard dataset",
+      "publisher": "LMArena",
+      "kind": "dataset",
+      "url": "https://huggingface.co/datasets/lmarena-ai/leaderboard-dataset",
+      "revision": "4ca698d9bb5780db156459679d5c7e6dff4edbd3",
+      "licence": "CC-BY-4.0",
+      "attribution": "Ratings from the Arena leaderboard by LMArena (https://arena.ai/leaderboard), lmarena-ai/leaderboard-dataset on Hugging Face, CC BY 4.0. Changed: ratings and interval ends rounded to one decimal.",
+      "note": "Subsets text_style_control and vision_style_control, split latest. Style control is the leaderboard's default view."
+    },
+    {
+      "id": "null-decision-timed-runs",
+      "title": "Timed runs by Null Decision",
+      "publisher": "Null Decision (Mantle Chat)",
+      "kind": "measurement",
+      "url": "https://github.com/null-decision/llm-energy-data/blob/main/docs/methods/timed-runs.md",
+      "licence": "CC-BY-4.0",
+      "attribution": "llm-energy-data by Null Decision (https://github.com/null-decision/llm-energy-data), CC BY 4.0.",
+      "method": "docs/methods/timed-runs.md"
+    },
+    {
+      "id": "anthropic-pricing",
+      "title": "Claude API pricing",
+      "publisher": "Anthropic",
+      "kind": "provider_page",
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "licence": "facts"
+    },
+    {
+      "id": "google-gemini-pricing",
+      "title": "Gemini API pricing",
+      "publisher": "Google",
+      "kind": "provider_page",
+      "url": "https://aistudio.google.com/docs/pricing",
+      "licence": "facts",
+      "note": "ai.google.dev/gemini-api/docs/pricing redirects here. Paid tier, text input."
+    },
+    {
+      "id": "openai-pricing",
+      "title": "OpenAI API pricing",
+      "publisher": "OpenAI",
+      "kind": "provider_page",
+      "url": "https://developers.openai.com/api/docs/pricing",
+      "licence": "facts",
+      "note": "platform.openai.com/docs/pricing redirects here. Standard tier."
+    },
+    {
+      "id": "xai-pricing",
+      "title": "xAI API pricing",
+      "publisher": "xAI",
+      "kind": "provider_page",
+      "url": "https://docs.x.ai/developers/pricing",
+      "licence": "facts"
+    },
+    {
+      "id": "moonshot-pricing",
+      "title": "Kimi API pricing",
+      "publisher": "Moonshot AI",
+      "kind": "provider_page",
+      "url": "https://platform.kimi.ai/docs/pricing/chat",
+      "licence": "facts",
+      "note": "platform.moonshot.ai redirects here. Prices exclude taxes."
+    },
+    {
+      "id": "mistral-pricing",
+      "title": "Mistral AI API pricing",
+      "publisher": "Mistral AI",
+      "kind": "provider_page",
+      "url": "https://docs.mistral.ai/inference/pricing",
+      "licence": "facts",
+      "note": "mistral.ai/pricing shows subscription plans only; API prices are on docs.mistral.ai."
+    },
+    {
+      "id": "deepseek-pricing",
+      "title": "DeepSeek API pricing",
+      "publisher": "DeepSeek",
+      "kind": "provider_page",
+      "url": "https://api-docs.deepseek.com/quick_start/pricing",
+      "licence": "facts"
+    },
+    {
+      "id": "zai-pricing",
+      "title": "Z.ai API pricing",
+      "publisher": "Z.ai",
+      "kind": "provider_page",
+      "url": "https://docs.z.ai/guides/overview/pricing",
+      "licence": "facts"
+    }
+  ]
+}

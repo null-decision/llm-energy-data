@@ -1,0 +1,40 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/null-decision/llm-energy-data/blob/main/schema/sources.schema.json",
+  "title": "Sources, schema v0",
+  "description": "Every source a value in data/models may cite, with its licence.",
+  "type": "object",
+  "required": ["sources"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "sources": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["id", "title", "publisher", "kind", "url", "licence"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+          "title": { "type": "string", "minLength": 1 },
+          "publisher": { "type": "string", "minLength": 1 },
+          "kind": {
+            "description": "'dataset': a published data file. 'provider_page': a provider's own page, such as a price list or a model card. 'measurement': our own measurement, with its method. 'file_listing': file sizes read from a repository host.",
+            "enum": ["dataset", "provider_page", "measurement", "file_listing"]
+          },
+          "url": { "type": "string", "format": "uri" },
+          "revision": { "description": "The exact version read, such as a commit.", "type": "string", "minLength": 1 },
+          "licence": {
+            "description": "An SPDX identifier, or 'facts' for single facts read from a public page (a price, a file size, a parameter count), where we copy no text or tables.",
+            "type": "string",
+            "minLength": 1
+          },
+          "attribution": { "description": "The credit to give when you reuse these values.", "type": "string", "minLength": 1 },
+          "method": { "description": "For a measurement: the file in this repository that describes how it was done.", "type": "string", "minLength": 1 },
+          "note": { "type": "string", "minLength": 1 }
+        }
+      }
+    }
+  }
+}
