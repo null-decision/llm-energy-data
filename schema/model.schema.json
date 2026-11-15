@@ -1,0 +1,240 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://github.com/null-decision/llm-energy-data/blob/main/schema/model.schema.json",
+  "title": "Model entry, schema v0",
+  "description": "Sourced facts about one large language model. Every number sits in an object that names its source and the day it was checked. A field that is missing means nobody publishes it and we have no estimate yet.",
+  "type": "object",
+  "required": ["id", "name", "developer", "open_weights", "architecture", "speeds", "tokens_per_task", "prices", "quality"],
+  "additionalProperties": false,
+  "properties": {
+    "$schema": { "type": "string" },
+    "id": {
+      "description": "<developer>/<model>, lowercase. The entry lives at data/models/<id>.json.",
+      "type": "string",
+      "pattern": "^[a-z0-9-]+/[a-z0-9][a-z0-9.-]*$"
+    },
+    "name": { "description": "The model's name as its developer writes it.", "type": "string", "minLength": 1 },
+    "developer": { "description": "Who trained the model, lowercase. Not always who serves it.", "type": "string", "pattern": "^[a-z0-9-]+$" },
+    "open_weights": { "description": "Whether the developer publishes the weights.", "type": "boolean" },
+    "ecologits": { "$ref": "#/$defs/ecologits_ref" },
+    "architecture": { "$ref": "#/$defs/architecture" },
+    "speeds": { "type": "array", "items": { "$ref": "#/$defs/speed" } },
+    "tokens_per_task": { "type": "array", "items": { "$ref": "#/$defs/tokens_per_task" } },
+    "prices": { "type": "array", "items": { "$ref": "#/$defs/price" } },
+    "quality": { "type": "array", "items": { "$ref": "#/$defs/quality" } },
+    "notes": { "type": "array", "items": { "type": "string", "minLength": 1 } }
+  },
+  "$defs": {
+    "date": { "type": "string", "format": "date", "pattern": "^\\d{4}-\\d{2}-\\d{2}$" },
+    "slug": { "type": "string", "pattern": "^[a-z0-9][a-z0-9._-]*$" },
+    "reasoning": {
+      "description": "How much the model reasoned. 'on': reasoning on, level not named. 'not_stated': the source doesn't say.",
+      "enum": ["none", "minimal", "low", "medium", "high", "xhigh", "max", "on", "not_stated"]
+    },
+    "provenance": {
+      "description": "Where a value comes from. Shared by every object that holds numbers.",
+      "type": "object",
+      "required": ["source", "checked_at"],
+      "properties": {
+        "source": { "description": "An id from data/sources.json.", "$ref": "#/$defs/slug" },
+        "url": { "description": "The exact page or file, when the source has many.", "type": "string", "format": "uri" },
+        "checked_at": { "description": "The day someone read the value at the source.", "$ref": "#/$defs/date" },
+        "estimated": { "description": "The source estimates the value: the developer hasn't published it.", "const": true },
+        "note": { "type": "string", "minLength": 1 }
+      }
+    },
+    "number_or_range": {
+      "description": "A point value, or a range where the value is uncertain.",
+      "oneOf": [
+        { "type": "object", "required": ["value"], "properties": { "value": { "type": "number", "exclusiveMinimum": 0 } } },
+        {
+          "type": "object",
+          "required": ["min", "max"],
+          "properties": { "min": { "type": "number", "exclusiveMinimum": 0 }, "max": { "type": "number", "exclusiveMinimum": 0 } }
+        }
+      ]
+    },
+    "sourced_number": {
+      "type": "object",
+      "allOf": [{ "$ref": "#/$defs/provenance" }, { "$ref": "#/$defs/number_or_range" }],
+      "unevaluatedProperties": false
+    },
+    "ecologits_ref": {
+      "description": "The same model in EcoLogits' models.json, for people who use EcoLogits.",
+      "type": "object",
+      "required": ["provider", "name", "version"],
+      "additionalProperties": false,
+      "properties": {
+        "provider": { "type": "string", "minLength": 1 },
+        "name": { "type": "string", "minLength": 1 },
+        "version": { "type": "string", "minLength": 1 }
+      }
+    },
+    "architecture": {
+      "type": "object",
+      "additionalProperties": false,
+      "properties": {
+        "type": {
+          "description": "Dense, or mixture of experts (moe).",
+          "type": "object",
+          "allOf": [{ "$ref": "#/$defs/provenance" }, { "type": "object", "required": ["value"], "properties": { "value": { "enum": ["dense", "moe"] } } }],
+          "unevaluatedProperties": false
+        },
+        "total_params_b": { "description": "All parameters, in billions.", "$ref": "#/$defs/sourced_number" },
+        "active_params_b": {
+          "description": "Parameters used for each generated token, in billions. Equal to total_params_b for a dense model.",
+          "$ref": "#/$defs/sourced_number"
+        },
+        "weights_gb": {
+          "description": "Size of the published weights: one copy of the .safetensors files, 1 GB = 10^9 bytes. It shows the precision the model ships in.",
+          "type": "object",
+          "allOf": [
+            { "$ref": "#/$defs/provenance" },
+            {
+              "type": "object",
+              "required": ["value", "hf_repo"],
+              "properties": {
+                "value": { "type": "number", "exclusiveMinimum": 0 },
+                "hf_repo": { "description": "The Hugging Face repository, owner/name.", "type": "string", "pattern": "^[A-Za-z0-9._-]+/[A-Za-z0-9._-]+$" },
+                "hf_revision": { "description": "The commit the size was read from.", "type": "string", "pattern": "^[0-9a-f]{40}$" },
+                "files": { "description": "Number of .safetensors files counted.", "type": "integer", "minimum": 1 },
+                "precision": { "description": "Weight precision as the model card states it.", "type": "string", "minLength": 1 }
+              }
+            }
+          ],
+          "unevaluatedProperties": false
+        }
+      }
+    },
+    "speed": {
+      "description": "Measured output speed and time to first token on one provider's API.",
+      "type": "object",
+      "allOf": [
+        { "$ref": "#/$defs/provenance" },
+        {
+          "type": "object",
+          "required": ["provider", "api_model", "tokens_per_second", "time_to_first_token_s", "statistic", "answers", "period", "reasoning"],
+          "properties": {
+            "provider": { "description": "Who served the answers.", "$ref": "#/$defs/slug" },
+            "api_model": { "description": "The model name sent to that API.", "type": "string", "minLength": 1 },
+            "region": { "description": "The provider's region or endpoint, when it has several.", "$ref": "#/$defs/slug" },
+            "tokens_per_second": { "description": "Output tokens divided by the time after the first token.", "type": "number", "exclusiveMinimum": 0 },
+            "time_to_first_token_s": { "description": "Seconds from sending the request to the first text.", "type": "number", "minimum": 0 },
+            "statistic": { "enum": ["median", "mean"] },
+            "answers": { "description": "Number of answers behind the statistic.", "type": "integer", "minimum": 1 },
+            "min_output_tokens": { "description": "Only answers with at least this many output tokens count.", "type": "integer", "minimum": 1 },
+            "period": {
+              "type": "object",
+              "required": ["from", "to"],
+              "additionalProperties": false,
+              "properties": { "from": { "$ref": "#/$defs/date" }, "to": { "$ref": "#/$defs/date" } }
+            },
+            "reasoning": { "$ref": "#/$defs/reasoning" }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "tokens_per_task": {
+      "description": "Typical answer length for one kind of task at one reasoning level.",
+      "type": "object",
+      "allOf": [
+        { "$ref": "#/$defs/provenance" },
+        {
+          "type": "object",
+          "required": ["task", "reasoning", "output_tokens", "statistic", "answers"],
+          "properties": {
+            "task": { "description": "Kind of task, such as chat, coding, math or writing.", "$ref": "#/$defs/slug" },
+            "reasoning": { "$ref": "#/$defs/reasoning" },
+            "output_tokens": { "description": "All generated tokens, reasoning included.", "type": "number", "exclusiveMinimum": 0 },
+            "reasoning_tokens": { "description": "The reasoning part of output_tokens, when known.", "type": "number", "minimum": 0 },
+            "input_tokens": { "type": "number", "minimum": 0 },
+            "statistic": { "enum": ["median", "mean"] },
+            "answers": { "type": "integer", "minimum": 1 },
+            "prompt_set": { "description": "The public prompt set the answers come from.", "type": "string", "minLength": 1 }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "price": {
+      "description": "List price on one provider's API, per million tokens, standard tier.",
+      "type": "object",
+      "allOf": [
+        { "$ref": "#/$defs/provenance" },
+        {
+          "type": "object",
+          "required": ["provider", "api_model", "currency", "input_per_mtok", "output_per_mtok"],
+          "properties": {
+            "provider": { "description": "Who sells the API.", "$ref": "#/$defs/slug" },
+            "api_model": { "type": "string", "minLength": 1 },
+            "applies_to": { "description": "When the price has tiers: which requests this price is for.", "type": "string", "minLength": 1 },
+            "valid_from": { "description": "First day of a price the provider has announced ahead.", "$ref": "#/$defs/date" },
+            "valid_until": { "description": "Last day of a promotion or an announced price.", "$ref": "#/$defs/date" },
+            "currency": { "enum": ["USD", "EUR", "CNY"] },
+            "input_per_mtok": { "type": "number", "minimum": 0 },
+            "cached_input_per_mtok": { "description": "Price of input read from the provider's cache.", "type": "number", "minimum": 0 },
+            "output_per_mtok": { "description": "Output tokens, reasoning included.", "type": "number", "minimum": 0 },
+            "regional_surcharges": {
+              "description": "What a regional endpoint costs: the list price times the multiplier.",
+              "type": "array",
+              "minItems": 1,
+              "items": {
+                "type": "object",
+                "required": ["region", "multiplier"],
+                "additionalProperties": false,
+                "properties": {
+                  "region": { "$ref": "#/$defs/slug" },
+                  "multiplier": { "type": "number", "exclusiveMinimum": 0 },
+                  "url": { "type": "string", "format": "uri" }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    },
+    "quality": {
+      "description": "Ratings of one leaderboard entry. Ratings are only comparable within one arena, category and snapshot.",
+      "type": "object",
+      "allOf": [
+        { "$ref": "#/$defs/provenance" },
+        {
+          "type": "object",
+          "required": ["leaderboard", "arena", "entry", "match", "reasoning", "style_control", "snapshot_date", "ratings"],
+          "properties": {
+            "leaderboard": { "enum": ["lmarena"] },
+            "arena": { "description": "Which arena, such as text or vision.", "$ref": "#/$defs/slug" },
+            "entry": { "description": "The entry's name on the leaderboard.", "type": "string", "minLength": 1 },
+            "match": {
+              "description": "'exact': the entry is this model as its API serves it today. 'other_checkpoint': a dated or preview release of the same model. 'checkpoint_not_stated': the model has several releases and the entry doesn't say which.",
+              "enum": ["exact", "other_checkpoint", "checkpoint_not_stated"]
+            },
+            "reasoning": { "$ref": "#/$defs/reasoning" },
+            "style_control": { "description": "Whether the leaderboard adjusts ratings for answer length and formatting.", "type": "boolean" },
+            "snapshot_date": { "description": "The leaderboard's publish date.", "$ref": "#/$defs/date" },
+            "ratings": {
+              "description": "By category, as the leaderboard names them.",
+              "type": "object",
+              "minProperties": 1,
+              "propertyNames": { "pattern": "^[a-z0-9_]+$" },
+              "additionalProperties": {
+                "type": "object",
+                "required": ["rating", "rating_lower", "rating_upper", "votes"],
+                "additionalProperties": false,
+                "properties": {
+                  "rating": { "type": "number" },
+                  "rating_lower": { "description": "Lower end of the leaderboard's confidence interval.", "type": "number" },
+                  "rating_upper": { "description": "Upper end of the leaderboard's confidence interval.", "type": "number" },
+                  "votes": { "type": "integer", "minimum": 1 }
+                }
+              }
+            }
+          }
+        }
+      ],
+      "unevaluatedProperties": false
+    }
+  }
+}

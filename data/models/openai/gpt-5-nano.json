@@ -1,0 +1,116 @@
+{
+  "$schema": "../../../schema/model.schema.json",
+  "id": "openai/gpt-5-nano",
+  "name": "GPT-5 nano",
+  "developer": "openai",
+  "open_weights": false,
+  "ecologits": {
+    "provider": "openai",
+    "name": "gpt-5-nano",
+    "version": "0.11.3"
+  },
+  "architecture": {
+    "type": {
+      "value": "dense",
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    },
+    "total_params_b": {
+      "min": 5,
+      "max": 18.5,
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    },
+    "active_params_b": {
+      "min": 5,
+      "max": 18.5,
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    }
+  },
+  "speeds": [],
+  "tokens_per_task": [],
+  "prices": [
+    {
+      "provider": "openai",
+      "api_model": "gpt-5-nano",
+      "currency": "USD",
+      "input_per_mtok": 0.05,
+      "cached_input_per_mtok": 0.005,
+      "output_per_mtok": 0.4,
+      "source": "openai-pricing",
+      "url": "https://developers.openai.com/api/docs/pricing",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "quality": [
+    {
+      "leaderboard": "lmarena",
+      "arena": "text",
+      "entry": "GPT-5 nano (High)",
+      "match": "exact",
+      "reasoning": "high",
+      "style_control": true,
+      "snapshot_date": "2026-11-11",
+      "ratings": {
+        "overall": {
+          "rating": 1337.6,
+          "rating_lower": 1330.6,
+          "rating_upper": 1344.5,
+          "votes": 8119
+        },
+        "coding": {
+          "rating": 1385.4,
+          "rating_lower": 1370.7,
+          "rating_upper": 1400,
+          "votes": 1663
+        },
+        "math": {
+          "rating": 1347.8,
+          "rating_lower": 1321.2,
+          "rating_upper": 1374.4,
+          "votes": 493
+        },
+        "creative_writing": {
+          "rating": 1246,
+          "rating_lower": 1226,
+          "rating_upper": 1266,
+          "votes": 910
+        },
+        "hard_prompts": {
+          "rating": 1356,
+          "rating_lower": 1346.2,
+          "rating_upper": 1365.8,
+          "votes": 3771
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "leaderboard": "lmarena",
+      "arena": "vision",
+      "entry": "GPT-5 nano (High)",
+      "match": "exact",
+      "reasoning": "high",
+      "style_control": true,
+      "snapshot_date": "2026-11-09",
+      "ratings": {
+        "overall": {
+          "rating": 1147.5,
+          "rating_lower": 1136.1,
+          "rating_upper": 1158.8,
+          "votes": 3921
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "notes": [
+    "OpenAI shuts down gpt-5-nano on 2026-12-11 (deprecations page, checked 2026-11-15)."
+  ]
+}

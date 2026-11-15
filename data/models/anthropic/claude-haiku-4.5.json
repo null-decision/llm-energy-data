@@ -1,0 +1,94 @@
+{
+  "$schema": "../../../schema/model.schema.json",
+  "id": "anthropic/claude-haiku-4.5",
+  "name": "Claude Haiku 4.5",
+  "developer": "anthropic",
+  "open_weights": false,
+  "ecologits": {
+    "provider": "anthropic",
+    "name": "claude-haiku-4-5-20251001",
+    "version": "0.11.3"
+  },
+  "architecture": {
+    "type": {
+      "value": "dense",
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    },
+    "total_params_b": {
+      "min": 10,
+      "max": 35,
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    },
+    "active_params_b": {
+      "min": 10,
+      "max": 35,
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    }
+  },
+  "speeds": [],
+  "tokens_per_task": [],
+  "prices": [
+    {
+      "provider": "anthropic",
+      "api_model": "claude-haiku-4-5-20251001",
+      "currency": "USD",
+      "input_per_mtok": 1,
+      "cached_input_per_mtok": 0.1,
+      "output_per_mtok": 5,
+      "source": "anthropic-pricing",
+      "url": "https://platform.claude.com/docs/en/about-claude/pricing",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "quality": [
+    {
+      "leaderboard": "lmarena",
+      "arena": "text",
+      "entry": "Claude Haiku 4.5 (20251001)",
+      "match": "exact",
+      "reasoning": "not_stated",
+      "style_control": true,
+      "snapshot_date": "2026-11-11",
+      "ratings": {
+        "overall": {
+          "rating": 1414,
+          "rating_lower": 1411.6,
+          "rating_upper": 1416.4,
+          "votes": 153897
+        },
+        "coding": {
+          "rating": 1481.5,
+          "rating_lower": 1477.6,
+          "rating_upper": 1485.5,
+          "votes": 39532
+        },
+        "math": {
+          "rating": 1401.8,
+          "rating_lower": 1394.8,
+          "rating_upper": 1408.7,
+          "votes": 8532
+        },
+        "creative_writing": {
+          "rating": 1386.9,
+          "rating_lower": 1382.3,
+          "rating_upper": 1391.5,
+          "votes": 26454
+        },
+        "hard_prompts": {
+          "rating": 1441.1,
+          "rating_lower": 1438.1,
+          "rating_upper": 1444.1,
+          "votes": 95033
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    }
+  ]
+}

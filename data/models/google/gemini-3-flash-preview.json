@@ -1,0 +1,175 @@
+{
+  "$schema": "../../../schema/model.schema.json",
+  "id": "google/gemini-3-flash-preview",
+  "name": "Gemini 3 Flash",
+  "developer": "google",
+  "open_weights": false,
+  "ecologits": {
+    "provider": "google_genai",
+    "name": "gemini-3-flash-preview",
+    "version": "0.11.3"
+  },
+  "architecture": {
+    "type": {
+      "value": "moe",
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    },
+    "total_params_b": {
+      "value": 300,
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    },
+    "active_params_b": {
+      "min": 100,
+      "max": 300,
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    }
+  },
+  "speeds": [],
+  "tokens_per_task": [],
+  "prices": [
+    {
+      "provider": "google",
+      "api_model": "gemini-3-flash-preview",
+      "applies_to": "text, image and video input",
+      "currency": "USD",
+      "input_per_mtok": 0.5,
+      "cached_input_per_mtok": 0.05,
+      "output_per_mtok": 3,
+      "source": "google-gemini-pricing",
+      "url": "https://aistudio.google.com/docs/pricing",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "quality": [
+    {
+      "leaderboard": "lmarena",
+      "arena": "text",
+      "entry": "Gemini 3 Flash",
+      "match": "exact",
+      "reasoning": "not_stated",
+      "style_control": true,
+      "snapshot_date": "2026-11-11",
+      "ratings": {
+        "overall": {
+          "rating": 1473,
+          "rating_lower": 1468.7,
+          "rating_upper": 1477.4,
+          "votes": 31126
+        },
+        "coding": {
+          "rating": 1505.2,
+          "rating_lower": 1497.5,
+          "rating_upper": 1513,
+          "votes": 6555
+        },
+        "math": {
+          "rating": 1474.4,
+          "rating_lower": 1461.6,
+          "rating_upper": 1487.3,
+          "votes": 2062
+        },
+        "creative_writing": {
+          "rating": 1456.3,
+          "rating_lower": 1446.9,
+          "rating_upper": 1465.6,
+          "votes": 4779
+        },
+        "hard_prompts": {
+          "rating": 1492.9,
+          "rating_lower": 1487.4,
+          "rating_upper": 1498.4,
+          "votes": 17057
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "leaderboard": "lmarena",
+      "arena": "text",
+      "entry": "Gemini 3 Flash (Minimal)",
+      "match": "exact",
+      "reasoning": "minimal",
+      "style_control": true,
+      "snapshot_date": "2026-11-11",
+      "ratings": {
+        "overall": {
+          "rating": 1458.2,
+          "rating_lower": 1455.2,
+          "rating_upper": 1461.2,
+          "votes": 90063
+        },
+        "coding": {
+          "rating": 1489.4,
+          "rating_lower": 1484.4,
+          "rating_upper": 1494.4,
+          "votes": 23711
+        },
+        "math": {
+          "rating": 1453.3,
+          "rating_lower": 1444.7,
+          "rating_upper": 1462,
+          "votes": 4942
+        },
+        "creative_writing": {
+          "rating": 1446.9,
+          "rating_lower": 1441,
+          "rating_upper": 1452.7,
+          "votes": 14980
+        },
+        "hard_prompts": {
+          "rating": 1474.2,
+          "rating_lower": 1470.5,
+          "rating_upper": 1478,
+          "votes": 56947
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "leaderboard": "lmarena",
+      "arena": "vision",
+      "entry": "Gemini 3 Flash",
+      "match": "exact",
+      "reasoning": "not_stated",
+      "style_control": true,
+      "snapshot_date": "2026-11-09",
+      "ratings": {
+        "overall": {
+          "rating": 1272.2,
+          "rating_lower": 1267,
+          "rating_upper": 1277.4,
+          "votes": 38830
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "leaderboard": "lmarena",
+      "arena": "vision",
+      "entry": "Gemini 3 Flash (Minimal)",
+      "match": "exact",
+      "reasoning": "minimal",
+      "style_control": true,
+      "snapshot_date": "2026-11-09",
+      "ratings": {
+        "overall": {
+          "rating": 1259.6,
+          "rating_lower": 1254.3,
+          "rating_upper": 1264.9,
+          "votes": 36907
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    }
+  ]
+}

@@ -1,0 +1,103 @@
+{
+  "$schema": "../../../schema/model.schema.json",
+  "id": "google/gemini-3.7-flash",
+  "name": "Gemini 3.7 Flash",
+  "developer": "google",
+  "open_weights": false,
+  "ecologits": {
+    "provider": "google_genai",
+    "name": "gemini-3.7-flash",
+    "version": "0.11.3"
+  },
+  "architecture": {
+    "type": {
+      "value": "moe",
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    },
+    "total_params_b": {
+      "value": 750,
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    },
+    "active_params_b": {
+      "min": 75,
+      "max": 200,
+      "source": "ecologits-0.11.3",
+      "checked_at": "2026-11-15",
+      "estimated": true
+    }
+  },
+  "speeds": [],
+  "tokens_per_task": [],
+  "prices": [],
+  "quality": [
+    {
+      "leaderboard": "lmarena",
+      "arena": "text",
+      "entry": "Gemini 3.7 Flash (High)",
+      "match": "exact",
+      "reasoning": "high",
+      "style_control": true,
+      "snapshot_date": "2026-11-11",
+      "ratings": {
+        "overall": {
+          "rating": 1489.3,
+          "rating_lower": 1484.6,
+          "rating_upper": 1494,
+          "votes": 33251
+        },
+        "coding": {
+          "rating": 1520.3,
+          "rating_lower": 1513,
+          "rating_upper": 1527.6,
+          "votes": 8953
+        },
+        "math": {
+          "rating": 1501.6,
+          "rating_lower": 1486.9,
+          "rating_upper": 1516.3,
+          "votes": 1684
+        },
+        "creative_writing": {
+          "rating": 1487,
+          "rating_lower": 1478.8,
+          "rating_upper": 1495.3,
+          "votes": 7399
+        },
+        "hard_prompts": {
+          "rating": 1509.9,
+          "rating_lower": 1504.4,
+          "rating_upper": 1515.3,
+          "votes": 21623
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    },
+    {
+      "leaderboard": "lmarena",
+      "arena": "vision",
+      "entry": "Gemini 3.7 Flash (High)",
+      "match": "exact",
+      "reasoning": "high",
+      "style_control": true,
+      "snapshot_date": "2026-11-09",
+      "ratings": {
+        "overall": {
+          "rating": 1293.8,
+          "rating_lower": 1285.2,
+          "rating_upper": 1302.3,
+          "votes": 6840
+        }
+      },
+      "source": "lmarena-leaderboard",
+      "checked_at": "2026-11-15"
+    }
+  ],
+  "notes": [
+    "Google has deprecated gemini-3.7-flash: API requests for it are routed to gemini-3.8-flash, and the price page no longer lists it (checked 2026-11-15). No page states the rate routed requests are billed at, so this entry has no price."
+  ]
+}
