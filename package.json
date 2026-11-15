@@ -1,0 +1,19 @@
+{
+  "name": "llm-energy-data",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Open, sourced facts about large language models for energy estimates and model choice.",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "format": "node scripts/validate.mjs --fix"
+  },
+  "devDependencies": {
+    "ajv": "^8.20.0",
+    "ajv-formats": "^3.0.1"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
